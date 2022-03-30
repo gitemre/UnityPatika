@@ -6,21 +6,24 @@ namespace sinif_kavrami
     {
         static void Main(string[] args)
         {
-            Calisan calisan1 = new Calisan();
-            calisan1.ad = "Emre";
-            calisan1.soyad = "Öztürk";
-            calisan1.no = 403;
-            calisan1.departman = "QA";
-
+            Console.WriteLine("************Çalışan 1************");
+            Calisan calisan1 = new Calisan("Emre","Öztürk",403,"QA");
+            
             calisan1.calisanBilgiler();
 
+            Console.WriteLine("************Çalışan 2************");
             Calisan calisan2 = new Calisan();
             calisan2.ad = "Ahmet";
             calisan2.soyad = "Öztürk";
             calisan2.no = 563;
             calisan2.departman = "Dev";
 
-            calisan2.calisanBilgiler();  
+            calisan2.calisanBilgiler();
+            Console.WriteLine("************Çalışan ***********");
+
+            Calisan calisan3 = new Calisan("Dilara", "Öztürk");
+            calisan3.calisanBilgiler();
+
         }
     }
 
@@ -38,6 +41,22 @@ namespace sinif_kavrami
             Console.WriteLine("Çalışan no:{0}", departman);
             Console.WriteLine("Çalışan departman:{0}", departman);
 
+        }
+
+        public Calisan() { }
+
+        public Calisan(string ad, string soyad) {
+            this.ad = ad;
+            this.soyad = soyad;
+        }
+
+
+        public Calisan(string ad, string soyad, int no, string departman)
+        {
+            this.ad = ad;
+            this.soyad = soyad;
+            this.no = no;
+            this.departman = departman;
         }
     }
 }
